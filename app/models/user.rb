@@ -6,4 +6,8 @@ class User < ActiveRecord::Base
     'method_1'
   end
 
+  def method_2
+    'method_2'
+  end
+
 end
