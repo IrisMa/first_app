@@ -2,12 +2,13 @@ class User < ActiveRecord::Base
   attr_accessible :email, :name
   has_many :posts
 
-  def method_1
-    'method_1'
+  def initialize(attributes = {})
+    @name  = attributes[:name]
+    @email = attributes[:email]
   end
 
-  def method_2
-    'method_2'
+  def formatted_email
+    "#{@name} <#{@email}>"
   end
 
 end
