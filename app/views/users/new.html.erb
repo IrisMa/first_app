@@ -1,3 +1,40 @@
 <% provide(:title, 'Sign up') %>
-<h1>Sign up</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+
+
+<html>
+<head>
+  <script>
+  $(function() {
+    $( '#button1')
+    .click(function() {
+        alert("xxx");
+    });
+  });
+  </script>
+
+</head>
+
+<body>
+<h1 style="font: bold; font-size: 40px; ">Sign up</h1>
+<div>
+  <span style="font-style:normal; ">Name</span>
+  <p/>
+  <input id="txtName" style=" height: 20px; width: 300px; ">
+  <p/>
+  <span style="font-style:normal; ">Email</span>
+  <p/>
+  <input id="txtEmail" style=" height: 20px; width: 300px; ">
+  <p/>
+  <span style="font-style:normal; ">Password</span>
+  <p/>
+  <input id="txtPassword" style=" height: 20px; width: 300px; ">
+  <p/>
+  <span style="font-style:normal; ">Confirmation</span>
+  <p/>
+  <input id="txtConfirmation" style=" height: 20px; width: 300px; " >
+  <p/>
+  <button id="button1" style="color:black;font-family: Arial;font-size: 20px;  "  >Create my account</button>
+</div>
+
+</body>
+</html>
