@@ -17,6 +17,7 @@ FirstApp::Application.routes.draw do
 
   resources :users
 
+
   # Keep in mind you can assign values other than :controller and :action
 
   # Sample of named route:
