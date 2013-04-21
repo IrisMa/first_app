@@ -1,40 +1,27 @@
 <% provide(:title, 'Sign up') %>
+<h1>Sign up</h1>
 
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@user) do |f| %>
+        <%= render 'shared/error_messages' %>
 
-<html>
-<head>
-  <script>
-  $(function() {
-    $( '#button1')
-    .click(function() {
-        alert("xxx");
-    });
-  });
-  </script>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
 
-</head>
+        <%= f.label :email %>
+        <%= f.text_field :email %>
 
-<body>
-<h1 style="font: bold; font-size: 40px; ">Sign up</h1>
-<div>
-  <span style="font-style:normal; ">Name</span>
-  <p/>
-  <input id="txtName" style=" height: 20px; width: 300px; ">
-  <p/>
-  <span style="font-style:normal; ">Email</span>
-  <p/>
-  <input id="txtEmail" style=" height: 20px; width: 300px; ">
-  <p/>
-  <span style="font-style:normal; ">Password</span>
-  <p/>
-  <input id="txtPassword" style=" height: 20px; width: 300px; ">
-  <p/>
-  <span style="font-style:normal; ">Confirmation</span>
-  <p/>
-  <input id="txtConfirmation" style=" height: 20px; width: 300px; " >
-  <p/>
-  <button id="button1" style="color:black;font-family: Arial;font-size: 20px;  "  >Create my account</button>
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+
+        <%= f.label :password_confirmation, "Confirmation" %>
+        <%= f.password_field :password_confirmation %>
+
+        <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
 </div>
 
-</body>
-</html>
+
+
