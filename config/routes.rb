@@ -16,6 +16,11 @@ FirstApp::Application.routes.draw do
   resources :posts
 
   resources :users
+  resources :sessions, only:[:new, :create, :destroy]
+
+  match '/signup', to: 'users#new'
+  match '/signin', to: 'sessions#new'
+  match '/signup', to: 'sessions#destroy', via: :delete
 
 
   # Keep in mind you can assign values other than :controller and :action
