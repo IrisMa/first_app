@@ -37,6 +37,8 @@ group :test do
   gem 'rb-inotify'
   gem 'libnotify'
   gem 'factory_girl_rails'
+  gem 'cucumber-rails'
+  gem 'database_cleaner'
 end
 
 group :production do

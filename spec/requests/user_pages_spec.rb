@@ -9,7 +9,7 @@ describe "User pages" do
 
     let(:submit) { "Create my account"}
 
-    describe "With invalid information" do
+    describe "with invalid information" do
       it "should not create a user" do
         expect { click_button submit }.not_to change(User, :count)
       end
@@ -21,6 +21,11 @@ describe "User pages" do
         fill_in "Email", with: "user@example.com"
         fill_in "Password", with: "foobar"
         fill_in "Confirmation", with: "foobar"
+
+        describe "after saving the user" do
+          it {should have_link('Sign out')}
+        end
+
       end
 
       it "should create a user" do
