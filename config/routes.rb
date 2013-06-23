@@ -1,4 +1,10 @@
 FirstApp::Application.routes.draw do
+  resources :users
+  resources :sessions, only: [:new, :create, :destroy]
+
+  match '/signup',  to: 'users#new'
+  match '/signin',  to: 'sessions#new'
+  match '/signout', to: 'sessions#destroy', via: :delete
 
   get "users/new"
 
@@ -7,21 +13,11 @@ FirstApp::Application.routes.draw do
   # just remember to delete public/index.html.
   # root :to => "welcome#index"
 
-  match '/signup',  to: 'users#new'
-
   match '/help',    to: 'static_pages#help'
   match '/about',   to: 'static_pages#about'
   match '/contact', to: 'static_pages#contact'
 
   resources :posts
-
-  resources :users
-  resources :sessions, only:[:new, :create, :destroy]
-
-  match '/signup', to: 'users#new'
-  match '/signin', to: 'sessions#new'
-  match '/signup', to: 'sessions#destroy', via: :delete
-
 
   # Keep in mind you can assign values other than :controller and :action
 
